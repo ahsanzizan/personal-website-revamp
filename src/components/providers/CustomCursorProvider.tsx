@@ -49,12 +49,13 @@ export default function CustomCursor() {
   return (
     <div
       className={cn(
-        `pointer-events-none fixed left-0 top-0 z-[9999] hidden border bg-white bg-opacity-50 border-white drop-shadow-glow md:inline-block -translate-x-1/2 -translate-y-1/2 rounded-full transition-[width,height,background-color] duration-500`,
-        isHovering ? "h-10 w-10" : "h-5 w-5"
+        `pointer-events-none fixed left-0 top-0 z-[9999] hidden border border-white bg-opacity-50 drop-shadow-glow md:inline-block -translate-x-1/2 -translate-y-1/2 rounded-full transition-[width,height,background-color] duration-500`,
+        isHovering ? "h-10 w-10 bg-background" : "h-5 w-5 bg-white"
       )}
       style={{
-        transform: `translate(${x}px, ${y}px)`,
-        willChange: "transform, width, height, background-color",
+        left: `${x}px`,
+        top: `${y}px`,
+        willChange: "width, height, border",
       }}
     ></div>
   );

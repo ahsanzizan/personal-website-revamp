@@ -17,13 +17,20 @@ const robots =
 // TOOD: Change this metadata
 export const metadata: Metadata = {
   title: { default: "ahsanzizan", template: "%s | ahsanzizan" },
-  description: "The personal website and portfolio courtesy of Ahsan Azizan.",
+  description: "Presenting the personal website and portfolio of Ahsan Azizan.",
   authors: [{ name: "Ahsan Azizan", url: "https://ahsanzizan.xyz/" }],
   creator: "ahsanzizan",
   openGraph: {
-    images: `${process.env.URL}/logo-horizontal.png`,
+    images: `${process.env.URL}/logo.png`,
   },
-  keywords: ["my", "app"],
+  keywords: [
+    "ahsan",
+    "azizan",
+    "personal",
+    "website",
+    "ahsanzizan",
+    "awadullah",
+  ],
   robots,
 };
 

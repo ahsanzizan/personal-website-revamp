@@ -35,6 +35,26 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+
+    --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+    --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+    --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+    --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+    --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    --gleasing: cubic-bezier(0.4, 0, 0, 1);
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -71,4 +91,52 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer components {
+  .underline-animation::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out, background-color 1.5s ease-out;
+    @apply bg-foreground bg-opacity-100;
+  }
+  .underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    @apply bg-opacity-20;
+  }
+}
+
+.underline-animation {
+  @apply relative inline-block transition-all duration-500;
+}
+
+.display {
+  @apply text-3xl font-medium leading-[39px] sm:text-6xl md:text-7xl;
+}
+
+h1 {
+  @apply text-[26px] font-medium leading-[32px] lg:text-[36px] lg:leading-[44px] 2xl:text-[42px] 2xl:leading-[52px];
+}
+
+h2 {
+  @apply text-[24px] font-medium leading-[39px] 2xl:text-[32px];
+}
+
+h3 {
+  @apply text-[22px] font-medium leading-[27px];
+}
+
+h4 {
+  @apply text-xl font-medium leading-[25px];
+}
+
+p {
+  @apply text-[15px] font-medium leading-[18px] text-foreground opacity-80;
 }
