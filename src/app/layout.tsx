@@ -1,19 +1,14 @@
+import CustomCursor from "@/components/providers/CustomCursorProvider";
 import NextAuthProvider from "@/components/providers/NextAuthProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
 });
 
 const robots =
@@ -21,12 +16,10 @@ const robots =
 
 // TOOD: Change this metadata
 export const metadata: Metadata = {
-  title: { default: "My App", template: "%s | My App" },
-  description:
-    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, porro.",
+  title: { default: "ahsanzizan", template: "%s | ahsanzizan" },
+  description: "The personal website and portfolio courtesy of Ahsan Azizan.",
   authors: [{ name: "Ahsan Azizan", url: "https://ahsanzizan.xyz/" }],
-  creator: "My Team",
-  publisher: "My Publisher",
+  creator: "ahsanzizan",
   openGraph: {
     images: `${process.env.URL}/logo-horizontal.png`,
   },
@@ -51,9 +44,10 @@ export default function RootLayout({
           <GoogleAnalytics gaId={process.env.GA_ID} />
         )}
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+          className={`${poppins.className} antialiased overflow-x-hidden bg-background`}
         >
-          <main>{children}</main>
+          {children}
+          <CustomCursor />
           <Toaster />
         </body>
       </html>
