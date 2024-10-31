@@ -50,7 +50,7 @@ export default function CustomCursor() {
     <div
       className={cn(
         `pointer-events-none fixed left-0 top-0 z-[9999] hidden border border-white bg-opacity-50 drop-shadow-glow md:inline-block -translate-x-1/2 -translate-y-1/2 rounded-full transition-[width,height,background-color] duration-500`,
-        isHovering ? "h-10 w-10 bg-background" : "h-5 w-5 bg-white"
+        isHovering ? "h-14 w-14 bg-background" : "h-5 w-5 bg-white"
       )}
       style={{
         left: `${x}px`,

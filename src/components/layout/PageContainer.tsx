@@ -1,6 +1,5 @@
 "use client";
 
-import { useLenis } from "@/hooks/use-lenis";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,6 +15,7 @@ function Navbar() {
             alt="Logo"
             width={64}
             height={64}
+            loading="lazy"
             className="aspect-square size-14 group-hover:invert transition-all duration-500"
           />
         </Link>
@@ -39,11 +39,11 @@ function Navbar() {
 
 function Footer() {
   return (
-    <footer className="py-20 w-full bg-background-secondary">
+    <footer className="pb-20 pt-32 w-full bg-background-secondary">
       <div className="max-w-[1168px] mx-auto w-full px-5">
         <div className="max-w-xs md:max-w-xl w-full mx-auto text-center mb-20">
-          <h1 className="display mb-10">Be Kind and Do Great Things</h1>
-          <Link href={"#"} className="underline-animation">
+          <h1 className="mb-10">Be Kind and Do Great Things</h1>
+          <Link href={"#"} className="underline-animation-secondary">
             <h4>Let&apos;s go back up</h4>
           </Link>
         </div>
@@ -77,18 +77,19 @@ function Footer() {
             </Link>
           </div>
         </div>
+        <p className="w-full py-5 text-center">Copyright &copy; Ahsan Azizan</p>
       </div>
     </footer>
   );
 }
 
-export default function PageContainer({ children }: { children?: ReactNode }) {
-  useLenis();
-
+export function PageContainer({ children }: { children?: ReactNode }) {
   return (
     <>
       <Navbar />
-      <main className="max-w-[1168px] w-full mx-auto px-5">{children}</main>
+      <main className="max-w-[1168px] w-full mx-auto px-5 py-12">
+        {children}
+      </main>
       <Footer />
     </>
   );

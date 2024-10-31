@@ -111,18 +111,40 @@
     transform-origin: bottom left;
     @apply bg-opacity-20;
   }
+
+  .underline-animation-secondary::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    transition: transform 0.5s ease-out, background-color 1.5s ease-out;
+    @apply bg-foreground;
+  }
+  .underline-animation-secondary:hover::after {
+    transform: scaleX(0.5);
+    transform-origin: bottom left;
+    @apply bg-opacity-50;
+  }
 }
 
 .underline-animation {
   @apply relative inline-block transition-all duration-500;
 }
 
+.underline-animation-secondary {
+  @apply relative inline-block transition-all duration-500 text-foreground text-opacity-60 hover:text-opacity-100;
+}
+
 .display {
-  @apply text-3xl font-medium leading-[39px] sm:text-6xl md:text-7xl;
+  @apply text-5xl sm:text-8xl md:text-9xl font-extrabold text-justify;
 }
 
 h1 {
-  @apply text-[26px] font-medium leading-[32px] lg:text-[36px] lg:leading-[44px] 2xl:text-[42px] 2xl:leading-[52px];
+  @apply text-3xl font-medium leading-[39px] sm:text-6xl md:text-7xl;
 }
 
 h2 {
@@ -130,7 +152,7 @@ h2 {
 }
 
 h3 {
-  @apply text-[22px] font-medium leading-[27px];
+  @apply text-2xl md:text-5xl text-foreground md:leading-[1.2];
 }
 
 h4 {
@@ -139,4 +161,25 @@ h4 {
 
 p {
   @apply text-[15px] font-medium leading-[18px] text-foreground opacity-80;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }

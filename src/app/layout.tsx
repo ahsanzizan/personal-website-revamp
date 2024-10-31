@@ -1,9 +1,11 @@
 import CustomCursor from "@/components/providers/CustomCursorProvider";
 import NextAuthProvider from "@/components/providers/NextAuthProvider";
+import ProgressBarProvider from "@/components/providers/ProgressBarProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
+import { ReactLenis } from "@/components/providers/LenisProvider";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -45,19 +47,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <NextAuthProvider>
-      <html lang="en">
-        {process.env.APP_ENV === "production" && process.env.GA_ID && (
-          <GoogleAnalytics gaId={process.env.GA_ID} />
-        )}
-        <body
-          className={`${poppins.className} antialiased overflow-x-hidden bg-background`}
-        >
-          {children}
-          <CustomCursor />
-          <Toaster />
-        </body>
-      </html>
-    </NextAuthProvider>
+    <ReactLenis root>
+      <NextAuthProvider>
+        <html lang="en" className="scroll-smooth">
+          {process.env.APP_ENV === "production" && process.env.GA_ID && (
+            <GoogleAnalytics gaId={process.env.GA_ID} />
+          )}
+          <body
+            className={`${poppins.className} antialiased overflow-x-hidden bg-background`}
+          >
+            <ProgressBarProvider />
+            {children}
+            <CustomCursor />
+            <Toaster />
+          </body>
+        </html>
+      </NextAuthProvider>
+    </ReactLenis>
   );
 }
