@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
+import CustomCursor from "../providers/CustomCursorProvider";
 
 function Navbar() {
   return (
@@ -87,6 +88,7 @@ export function PageContainer({ children }: { children?: ReactNode }) {
   return (
     <>
       <Navbar />
+      <CustomCursor />
       <main className="max-w-[1168px] w-full mx-auto px-5 py-12">
         {children}
       </main>

@@ -1,5 +1,3 @@
-import { PageContainer } from "@/components/layout/PageContainer";
-import CustomCursor from "@/components/providers/CustomCursorProvider";
 import { ReactLenis } from "@/components/providers/LenisProvider";
 import NextAuthProvider from "@/components/providers/NextAuthProvider";
 import ProgressBarProvider from "@/components/providers/ProgressBarProvider";
@@ -49,8 +47,8 @@ export default function RootLayout({
 }>) {
   return (
     <ReactLenis root>
-      <NextAuthProvider>
-        <html lang="en" className="scroll-smooth">
+      <html lang="en" className="scroll-smooth">
+        <NextAuthProvider>
           {process.env.APP_ENV === "production" && process.env.GA_ID && (
             <GoogleAnalytics gaId={process.env.GA_ID} />
           )}
@@ -58,12 +56,11 @@ export default function RootLayout({
             className={`${poppins.className} antialiased overflow-x-hidden bg-background`}
           >
             <ProgressBarProvider />
-            <PageContainer>{children}</PageContainer>
-            <CustomCursor />
+            {children}
             <Toaster />
           </body>
-        </html>
-      </NextAuthProvider>
+        </NextAuthProvider>
+      </html>
     </ReactLenis>
   );
 }
