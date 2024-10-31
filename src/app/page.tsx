@@ -1,11 +1,10 @@
-import { PageContainer } from "@/components/layout/PageContainer";
 import { SectionContainer } from "@/components/layout/SectionContainer";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <PageContainer>
+    <>
       <SectionContainer id="hero" className="mb-14">
         <Link href={"/"} className="block mb-16 max-w-full w-full">
           <svg
@@ -107,6 +106,6 @@ export default function Home() {
           </div>
         </div>
       </SectionContainer>
-    </PageContainer>
+    </>
   );
 }

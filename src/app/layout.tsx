@@ -1,11 +1,12 @@
+import { PageContainer } from "@/components/layout/PageContainer";
 import CustomCursor from "@/components/providers/CustomCursorProvider";
+import { ReactLenis } from "@/components/providers/LenisProvider";
 import NextAuthProvider from "@/components/providers/NextAuthProvider";
 import ProgressBarProvider from "@/components/providers/ProgressBarProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
-import { ReactLenis } from "@/components/providers/LenisProvider";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -57,7 +58,7 @@ export default function RootLayout({
             className={`${poppins.className} antialiased overflow-x-hidden bg-background`}
           >
             <ProgressBarProvider />
-            {children}
+            <PageContainer>{children}</PageContainer>
             <CustomCursor />
             <Toaster />
           </body>

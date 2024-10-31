@@ -140,7 +140,7 @@
 }
 
 .display {
-  @apply text-5xl sm:text-8xl md:text-9xl font-extrabold text-justify;
+  @apply text-5xl sm:text-8xl md:text-9xl text-justify;
 }
 
 h1 {
