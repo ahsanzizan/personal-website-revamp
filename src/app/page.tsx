@@ -1,11 +1,12 @@
 import { PageContainer } from "@/components/layout/PageContainer";
 import { SectionContainer } from "@/components/layout/SectionContainer";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <PageContainer>
-      <SectionContainer id="hero">
+      <SectionContainer id="hero" className="mb-14">
         <Link href={"/"} className="block mb-16 max-w-full w-full">
           <svg
             width="1194"
@@ -41,6 +42,64 @@ export default function Home() {
               <source src="/video.mp4" type="video/mp4" />
               Your browser does not support the video tag
             </video>
+          </div>
+        </div>
+      </SectionContainer>
+      <SectionContainer
+        id="about"
+        headerInfo={{
+          title: "Software Developer & Enthusiastic Student",
+          sectionTitle: "About",
+          sectionNumber: 1,
+        }}
+      >
+        <div className="flex flex-col justify-between lg:flex-row gap-8">
+          <Image
+            src={"/me.png"}
+            alt="Photo of Ahsan Azizan"
+            width={320}
+            height={620}
+            className="aspect-square brightness-50 grayscale hover:grayscale-0 transition-all duration-500 object-cover rounded-xl w-full lg:w-1/2 lg:sticky lg:top-[6em] lg:mb-0 lg:h-full lg:self-start"
+          />
+          <div className="w-full lg:w-1/2">
+            <h3 className="leading-[1.3] mb-16 text-foreground text-opacity-80">
+              I&apos;m Ahsan, a student at SMK Telkom Malang. My interest in
+              software engineering & data analytics field is fueled by my
+              passion for exploring and learning about technology.
+            </h3>
+            <p className="w-full pb-24 border-b border-foreground mb-8">
+              Hey! I’m Ahsan Awadullah Azizan, but just call me Ahsan. I studied
+              software engineering at SMK Telkom Sandhy Putra Malang. When I’m
+              not coding, you’ll find me lost in a book, googling anything,
+              gaming, or cheering for my favorite football team, Tottenham
+              Hotspur FC. I’ve helped many people building softwares in many
+              forms, spanning from web-application to mobile application.
+              <br />
+              <br />I started programming at 13, inspired by Dani, with C# as my
+              first language for game development in Unity. I realized watching
+              tutorials wasn’t enough, so I shifted to a structured approach.
+              While I’ve explored Java and JavaScript, my favorite is Python for
+              automating tasks. My journey has taught me that real learning
+              comes from practice, not just copying code!
+            </p>
+            <div className="grid grid-cols-3 gap-6 items-start">
+              <div className="block">
+                <h1>3+</h1>
+                <p>Years of exp</p>
+              </div>
+              <div className="block">
+                <h1>10+</h1>
+                <p>Projects Finished</p>
+              </div>
+              <div className="block">
+                <h1>99+</h1>
+                <p>Cats Petted</p>
+              </div>
+              <div className="block">
+                <h1>2M+</h1>
+                <p>Lines of Code</p>
+              </div>
+            </div>
           </div>
         </div>
       </SectionContainer>
