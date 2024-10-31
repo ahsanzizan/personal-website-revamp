@@ -21,7 +21,7 @@ export function SectionHeader({
       <div className="w-full pb-5 flex items-center justify-between border-b border-foreground mb-8">
         <div className="flex items-center gap-2">
           <h4>{sectionTitle}</h4>
-          <div className="size-2 md:size-3 rounded-full bg-foreground"></div>
+          <div className="size-2 md:size-3 rounded-full bg-foreground animate-pulse"></div>
         </div>
         <h4>{sectionNumber > 10 ? sectionNumber : `0${sectionNumber}`}</h4>
       </div>
