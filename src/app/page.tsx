@@ -99,6 +99,10 @@ export default function Home() {
                 <h1>2M+</h1>
                 <p>Lines of Code</p>
               </div>
+              <div className="block">
+                <h1>0</h1>
+                <p>UCL Trophies</p>
+              </div>
             </div>
           </div>
         </div>
