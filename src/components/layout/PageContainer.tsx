@@ -62,13 +62,13 @@ function Footer() {
           <div className="flex items-center gap-8">
             <Link
               href={"https://instagram.com/ahsanzizan"}
-              className="underline-animation"
+              className={buttonVariants({ variant: "default" })}
             >
               <p>Instagram</p>
             </Link>
             <Link
               href={"https://www.youtube.com/@ahsanzizan"}
-              className="underline-animation"
+              className={buttonVariants({ variant: "default" })}
             >
               <p>YouTube</p>
             </Link>
@@ -76,13 +76,13 @@ function Footer() {
           <div className="flex items-center gap-8">
             <Link
               href={"https://github.com/ahsanzizan"}
-              className="underline-animation"
+              className={buttonVariants({ variant: "default" })}
             >
               <p>GitHub</p>
             </Link>
             <Link
               href={"https://linkedin.com/in/ahsan-azizan"}
-              className="underline-animation"
+              className={buttonVariants({ variant: "default" })}
             >
               <p>LinkedIn</p>
             </Link>
