@@ -23,7 +23,7 @@ function Navbar() {
         </Link>
         <div className="flex flex-col gap-4">
           <Link
-            href={"/work"}
+            href={"mailto:contact@ahsanzizan.xyz"}
             className={buttonVariants({ variant: "default" })}
           >
             <h4>Get in touch</h4>

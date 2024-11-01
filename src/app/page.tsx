@@ -4,6 +4,45 @@ import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
+const services = [
+  {
+    title: "Web Application Development",
+    description:
+      "I develop responsive and interactive web applications using modern frameworks like React and Next.js. From frontend design to backend integration, I create scalable solutions tailored to your business needs and user experience goals.",
+    tags: [
+      "Frontend Development",
+      "Backend Development",
+      "User Interface Design",
+      "Content Management Systems",
+      "Creative Development",
+    ],
+  },
+  {
+    title: "Cross-platform Mobile Application Development",
+    description:
+      "I build cross-platform mobile applications for both iOS and Android using React Native and Flutter. With a focus on user-friendly design and performance, I ensure seamless integration and consistent functionality across devices.",
+    tags: [
+      "React Native",
+      "Flutter",
+      "Mobile UI/UX Design",
+      "API Integration",
+      "Performance Optimization",
+    ],
+  },
+  {
+    title: "Data Analytics",
+    description:
+      "I provide data analytics services to turn raw data into actionable insights, using tools like Python and SQL for data visualization, statistical analysis, and predictive modeling to inform decision-making.",
+    tags: [
+      "Data Collection",
+      "Data Visualization",
+      "Statistical Analysis",
+      "Predictive Modeling",
+      "Machine Learning",
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <PageContainer>
@@ -119,6 +158,38 @@ export default function Home() {
           sectionNumber: 2,
         }}
       ></SectionContainer>
+      <SectionContainer
+        id="services"
+        headerInfo={{
+          title: "Capabilities, Skills, and Areas of Expertise",
+          sectionTitle: "Services",
+          sectionNumber: 3,
+        }}
+      >
+        <div className="flex flex-col divide-y divide-foreground">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="grid grid-cols-1 items-center gap-24 py-16 md:grid-cols-2"
+            >
+              <h1 className="display hidden text-foreground text-opacity-60 md:inline-block">
+                0{index + 1}
+              </h1>
+              <div className="block">
+                <h3 className="mb-8">{service.title}</h3>
+                <p className="mb-20">{service.description}</p>
+                <div className="flex flex-wrap items-center gap-3">
+                  {service.tags.map((tag, index) => (
+                    <p className="tag" key={index}>
+                      {tag}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </SectionContainer>
     </PageContainer>
   );
 }

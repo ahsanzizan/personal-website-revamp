@@ -94,7 +94,7 @@
 }
 
 .display {
-  @apply text-justify text-5xl sm:text-8xl md:text-9xl;
+  @apply text-justify text-6xl sm:text-9xl md:text-[20rem] md:leading-[1.2];
 }
 
 h1 {
@@ -115,6 +115,10 @@ h4 {
 
 p {
   @apply text-base font-light leading-[1.5] text-foreground opacity-80;
+}
+
+.tag {
+  @apply rounded-full border border-foreground border-opacity-60 px-5 py-3 text-sm font-normal text-opacity-60;
 }
 
 html.lenis,

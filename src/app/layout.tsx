@@ -17,7 +17,10 @@ const robots =
 
 // TOOD: Change this metadata
 export const metadata: Metadata = {
-  title: { default: "ahsanzizan", template: "%s | ahsanzizan" },
+  title: {
+    default: "Ahsan Azizan | Developer & Learner",
+    template: "%s | Ahsan Azizan",
+  },
   description: "Presenting the personal website and portfolio of Ahsan Azizan.",
   authors: [{ name: "Ahsan Azizan", url: "https://ahsanzizan.xyz/" }],
   creator: "ahsanzizan",
@@ -53,7 +56,7 @@ export default function RootLayout({
             <GoogleAnalytics gaId={process.env.GA_ID} />
           )}
           <body
-            className={`${poppins.className} antialiased overflow-x-hidden bg-background`}
+            className={`${poppins.className} overflow-x-hidden bg-background antialiased`}
           >
             <ProgressBarProvider />
             {children}
