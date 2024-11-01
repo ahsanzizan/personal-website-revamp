@@ -93,54 +93,8 @@
   }
 }
 
-@layer components {
-  .underline-animation::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.5s ease-out, background-color 1.5s ease-out;
-    @apply bg-foreground bg-opacity-100;
-  }
-  .underline-animation:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-    @apply bg-opacity-20;
-  }
-
-  .underline-animation-secondary::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    transform: scaleX(1);
-    transform-origin: bottom left;
-    transition: transform 0.5s ease-out, background-color 1.5s ease-out;
-    @apply bg-foreground;
-  }
-  .underline-animation-secondary:hover::after {
-    transform: scaleX(0.5);
-    transform-origin: bottom left;
-    @apply bg-opacity-50;
-  }
-}
-
-.underline-animation {
-  @apply relative inline-block transition-all duration-500;
-}
-
-.underline-animation-secondary {
-  @apply relative inline-block transition-all duration-500 text-foreground text-opacity-60 hover:text-opacity-100;
-}
-
 .display {
-  @apply text-5xl sm:text-8xl md:text-9xl text-justify;
+  @apply text-justify text-5xl sm:text-8xl md:text-9xl;
 }
 
 h1 {
@@ -152,11 +106,11 @@ h2 {
 }
 
 h3 {
-  @apply text-2xl md:text-5xl text-foreground md:leading-[1.2];
+  @apply text-2xl text-foreground md:text-5xl md:leading-[1.2];
 }
 
 h4 {
-  @apply text-lg md:text-xl font-medium md:leading-[1.2];
+  @apply text-lg font-medium md:text-xl md:leading-[1.2];
 }
 
 p {

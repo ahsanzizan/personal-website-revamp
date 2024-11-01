@@ -5,30 +5,40 @@ import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
 import CustomCursor from "../providers/CustomCursorProvider";
+import { buttonVariants } from "../ui/button";
 
 function Navbar() {
   return (
-    <nav className="max-w-[1168px] w-full mx-auto px-5 pt-16">
-      <div className="flex items-center justify-between border-b pb-4 border-foreground">
-        <Link href={"/"} className={cn("w-14 h-14 group")}>
+    <nav className="mx-auto w-full max-w-[1168px] px-5 pt-16">
+      <div className="flex items-center justify-between border-b border-foreground pb-4">
+        <Link href={"/"} className={cn("group h-14 w-14")}>
           <Image
             src={"/logo.png"}
             alt="Logo"
             width={64}
             height={64}
             loading="lazy"
-            className="aspect-square size-14 group-hover:invert transition-all duration-500"
+            className="aspect-square size-14 transition-all duration-500 group-hover:invert"
           />
         </Link>
         <div className="flex flex-col gap-4">
-          <Link href={"/work"} className="underline-animation">
+          <Link
+            href={"/work"}
+            className={buttonVariants({ variant: "default" })}
+          >
             <h4>Get in touch</h4>
           </Link>
           <div className="flex items-center justify-end gap-4">
-            <Link href={"/blog"} className="underline-animation">
+            <Link
+              href={"/blog"}
+              className={buttonVariants({ variant: "default" })}
+            >
               <p>Blog</p>
             </Link>
-            <Link href={"/work"} className="underline-animation">
+            <Link
+              href={"/work"}
+              className={buttonVariants({ variant: "default" })}
+            >
               <p>Work</p>
             </Link>
           </div>
@@ -40,11 +50,11 @@ function Navbar() {
 
 function Footer() {
   return (
-    <footer className="pb-20 pt-32 w-full bg-background-secondary">
-      <div className="max-w-[1168px] mx-auto w-full px-5">
-        <div className="max-w-xs md:max-w-xl w-full mx-auto text-center mb-20">
+    <footer className="w-full bg-background-secondary pb-20 pt-32">
+      <div className="mx-auto w-full max-w-[1168px] px-5">
+        <div className="mx-auto mb-20 w-full max-w-xs text-center md:max-w-xl">
           <h1 className="mb-10">Be Kind and Do Great Things</h1>
-          <Link href={"#"} className="underline-animation-secondary">
+          <Link href={"#"} className={buttonVariants({ variant: "secondary" })}>
             <h4>Let&apos;s go back up</h4>
           </Link>
         </div>
@@ -89,7 +99,7 @@ export function PageContainer({ children }: { children?: ReactNode }) {
     <>
       <Navbar />
       <CustomCursor />
-      <main className="max-w-[1168px] w-full mx-auto px-5 py-12">
+      <main className="mx-auto w-full max-w-[1168px] px-5 py-12">
         {children}
       </main>
       <Footer />
