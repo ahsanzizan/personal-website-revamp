@@ -98,11 +98,11 @@
 }
 
 h1 {
-  @apply text-4xl font-medium leading-[39px] sm:text-6xl md:text-7xl;
+  @apply text-4xl leading-[1.2] sm:text-7xl sm:leading-[1.2] md:text-8xl md:leading-[1.2];
 }
 
 h2 {
-  @apply text-3xl sm:text-5xl md:text-6xl;
+  @apply text-4xl font-medium leading-[39px] sm:text-6xl md:text-7xl;
 }
 
 h3 {

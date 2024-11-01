@@ -50,10 +50,10 @@ function Navbar() {
 
 function Footer() {
   return (
-    <footer className="w-full bg-background-secondary pb-20 pt-32">
+    <footer className="w-full bg-background-secondary pt-32">
       <div className="mx-auto w-full max-w-[1168px] px-5">
         <div className="mx-auto mb-20 w-full max-w-xs text-center md:max-w-xl">
-          <h1 className="mb-10">Be Kind and Do Great Things</h1>
+          <h2 className="mb-10">Be Kind and Do Great Things</h2>
           <Link href={"#"} className={buttonVariants({ variant: "secondary" })}>
             <h4>Let&apos;s go back up</h4>
           </Link>

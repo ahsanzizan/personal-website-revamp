@@ -88,29 +88,37 @@ export default function Home() {
             </p>
             <div className="grid grid-cols-3 items-start gap-6">
               <div className="block">
-                <h1>3+</h1>
+                <h2>3+</h2>
                 <p>Years of exp</p>
               </div>
               <div className="block">
-                <h1>10+</h1>
+                <h2>10+</h2>
                 <p>Projects Finished</p>
               </div>
               <div className="block">
-                <h1>99+</h1>
+                <h2>99+</h2>
                 <p>Cats Petted</p>
               </div>
               <div className="block">
-                <h1>2M+</h1>
+                <h2>2M+</h2>
                 <p>Lines of Code</p>
               </div>
               <div className="block">
-                <h1>0</h1>
+                <h2>0</h2>
                 <p>UCL Trophies</p>
               </div>
             </div>
           </div>
         </div>
       </SectionContainer>
+      <SectionContainer
+        id="works"
+        headerInfo={{
+          title: "A Curated List of Selected Works",
+          sectionTitle: "Works",
+          sectionNumber: 2,
+        }}
+      ></SectionContainer>
     </PageContainer>
   );
 }
